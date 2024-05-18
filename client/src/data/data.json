@@ -1,0 +1,55 @@
+{
+  "Header": {
+    "title": "Share Your Files With Your Friends",
+    "paragraph": ""
+  },
+  "Services": [
+    {
+      "icon": "fa fa-upload",
+      "name": "upload files",
+      "text": "Generally speaking, to upload a file is to transfer a copy of it to a server. Uploading is most used for transferring files over a network, especially over the internet. Usually, this is done from a client computer to a server."
+    },
+    {
+      "icon": "fa fa-users",
+      "name": "Join Groups",
+      "text": "Generally speaking, to upload a file is to transfer a copy of it to a server. Uploading is most used for transferring files over a network, especially over the internet. Usually, this is done from a client computer to a server."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "download files",
+      "text": "Generally speaking, to upload a file is to transfer a copy of it to a server. Uploading is most used for transferring files over a network, especially over the internet. Usually, this is done from a client computer to a server."
+    }
+    
+    
+  ], 
+  "Contact": {
+    "address": "4321 Tamil Nadu, erode, 638003",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-comments-o",
+      "title": "Lorem ipsum",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-bullhorn",
+      "title": "Lorem ipsum",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-group",
+      "title": "Lorem ipsum",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    },
+    {
+      "icon": "fa fa-magic",
+      "title": "Lorem ipsum",
+      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+    }
+  ]
+}
