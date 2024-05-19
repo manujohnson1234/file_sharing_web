@@ -1,11 +1,17 @@
 import React from "react";
+import "./LoginForm.css";
 
 export const Login = () => {
   return (
-    <div>
+    <div id="login-form">
       <h1>Login</h1>
-      {/* Your sign-up form and content */}
+      <form>
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 };
-
