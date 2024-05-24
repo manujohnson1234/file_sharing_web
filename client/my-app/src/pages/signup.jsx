@@ -11,7 +11,7 @@ export const SignUp = () => {
     confirmPassword: ""
   });
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +22,7 @@ export const SignUp = () => {
   };
 
 
-  const handleSubmit = async(e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { username, email, password, confirmPassword } = formData;
@@ -32,21 +32,17 @@ export const SignUp = () => {
       return;
     }
 
-    const data = new FormData();
-    data.append('username', username);
-    data.append('email', email);
-    data.append('password', password);
+    const data = { username, email, password };
 
     const response = await registerData(data);
 
-    if(response.status >= 200 && response.status < 300){
+    if (response && response.status >= 200 && response.status < 300 && response.data.success === true) {
       alert("Signup successful!");
-      history.push("/login");
-
-    }else{
-      alert("Signup failed!");
+      navigate('/login', { replace: true });
+    } else {
+      alert(response.data.message);
     }
-  }
+  };
 
 
 

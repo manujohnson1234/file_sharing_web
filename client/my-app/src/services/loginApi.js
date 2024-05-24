@@ -7,6 +7,6 @@ export const authetication = async(data)=>{
         const response = await axios.post(`${API_URI}/login`, data);
         return response;
     }catch(error){
-        console.log('Error while calling the API ', error.message);
+        return { status: 500, message: 'Network error' };
     }
 }

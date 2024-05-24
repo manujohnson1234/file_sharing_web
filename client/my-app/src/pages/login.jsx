@@ -1,5 +1,6 @@
 
 import React, {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 import {authetication} from "../services/loginApi"
 import "./LoginForm.css";
 
@@ -10,6 +11,9 @@ export const Login = () => {
     password: ""
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,17 +25,27 @@ export const Login = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
 
-    const data = new FormData();
-    data.append('username', formData.username);
-    data.append('password', formData.password);
+    const {username, password} = formData;
+
+    const data = {username, password};
 
     const response = await authetication(data);
+
+
+    if(response && response.status >= 200 && response.status < 300 && response.success === true){
+      navigate('/',{replace: true});
+    }else{
+      alert(response.data.message);
+    }
+
+    
 
   }
   
   return (
     <div id="login-form">
       <h1>Login</h1>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
 
         <label htmlFor="username">Username:</label>
