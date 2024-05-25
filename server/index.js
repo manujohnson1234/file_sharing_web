@@ -1,14 +1,19 @@
 const express = require('express');
-const cros = require('cors');
-const cookieParser = require("cookie-parser");
+const cors = require('cors');
 const app = express();
 const dbconnection = require('./db/dbConnect');
 
 const PORT = 8080;
 
 app.use(express.json());
-app.use(cros());
-app.use(cookieParser());
+app.use(
+    cors({
+      origin: ["http://localhost:3000"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
+// app.use(cookieParser());
 dbconnection();
 
 app.use('/',require('./router/router'));

@@ -32,7 +32,8 @@ export const Login = () => {
     const response = await authetication(data);
 
 
-    if(response && response.status >= 200 && response.status < 300 && response.success === true){
+    if(response && response.status >= 200 && response.status < 300 && response.data.success === true){
+      localStorage.setItem("token", response.data.token);
       navigate('/',{replace: true});
     }else{
       alert(response.data.message);

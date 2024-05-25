@@ -47,12 +47,7 @@ const login = async (req, res)=>{
 
       const token = createSecretToken(user._id);
 
-      res.cookie("token", token,{
-        withCredentials: true,
-        httpOnly: false,
-      });
-
-      res.status(200).json({ message: "User logged in successfully", success: true });
+      res.status(200).json({ message: "User logged in successfully", success: true, token});
         
     }catch(error){
         console.log(error);

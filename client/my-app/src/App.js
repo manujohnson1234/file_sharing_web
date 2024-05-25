@@ -2,6 +2,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Home} from './pages/home';
 import {SignUp} from './pages/signup';
 import { Login } from './pages/login';
+import { Upload } from './pages/upload';
+
 import './App.css';
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
           <Route index element ={<Home/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/upload' element={<Upload/>}/>
         </Routes>
       </BrowserRouter>
     </div>

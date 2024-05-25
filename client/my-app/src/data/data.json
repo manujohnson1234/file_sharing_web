@@ -6,17 +6,20 @@
     {
       "icon": "fa fa-upload",
       "name": "upload",
-      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server."
+      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server.",
+      "link" : "/upload"
     },
     {
       "icon": "fa fa-group",
       "name": "join room",
-      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server."
+      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server.",
+      "link" : "/join-room"
     },
     {
       "icon": "fa fa-download",
       "name": "download",
-      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server."
+      "text": "Uploading is the process of putting web pages, images and files onto a web server. Downloading is the process of getting web pages, images and files from a web server.",
+      "link" : "/download"
     }
   ],
   "Contact": {
