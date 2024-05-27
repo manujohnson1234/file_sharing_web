@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigation2 } from "../components/navigation2";
 import { authorized } from "../services/uploadApi";
+import { FileUpload } from "../components/uploadComponent";
+import { FileList } from "../components/fileList";
 
 export const Upload = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(true);
+  const [files, setFiles] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -24,8 +27,9 @@ export const Upload = () => {
           return;
         }
 
-       
+      // console.log(response.files);
       setUsername(response.user);
+      setFiles(response.files);
       
       } catch (err) {
         console.error(err);
@@ -60,12 +64,8 @@ export const Upload = () => {
     <div>
     
       <Navigation2 />
-      <div className="username-container">
-        <h4>
-          <span>{username}</span>
-        </h4>
-      </div> 
-
+      <FileUpload/>
+      <FileList files={files}/>
     </div>
   );
 };

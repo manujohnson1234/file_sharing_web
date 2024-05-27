@@ -1,5 +1,6 @@
 const User = require('../models/UserModel');
 const {createSecretToken} = require('../util/SecretToken');
+const fs = require("fs");
 const bcrypt = require('bcrypt');
 
 const signup =  async (req, res)=>{
@@ -16,6 +17,9 @@ const signup =  async (req, res)=>{
         }else{
 
             const user = await User.create({ email, password, username});
+            const dir = `uploads/${username}`;
+            fs.mkdirSync(dir, { recursive: true });
+
             res.status(201).json({message : "user added successfully", success: true, user});
 
         }

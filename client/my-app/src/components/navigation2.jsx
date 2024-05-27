@@ -1,6 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Navigation2 = (props) => {
+  const navigate = useNavigate();
+
+  const handleLogout = ()=>{
+    localStorage.removeItem("token");
+    navigate('/', { replace: true });
+
+  }
+
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -27,16 +37,10 @@ export const Navigation2 = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-          
-          
+
             <li>
-              <a href="/signup" >
-                SignUp
-              </a>
-            </li>
-            <li>
-              <a href="/login">
-                Login
+              <a href="/" onClick={handleLogout}>
+                Logout
               </a>
             </li>
            

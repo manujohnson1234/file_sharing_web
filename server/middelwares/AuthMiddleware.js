@@ -2,7 +2,7 @@ const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const userVerification = async (req, res) => {
+const userVerification = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
     return res.status(401).json({ success: false, message: "No token provided" });
@@ -18,7 +18,8 @@ const userVerification = async (req, res) => {
       return res.status(401).json({ success: false, message: "User not found" });
     }
 
-    return res.status(200).json({ success: true, user: user.username });
+    req.user = user;
+    next();
   } catch (err) {
     if (err.name === 'JsonWebTokenError') {
       return res.status(401).json({ success: false, message: "Invalid token" });
