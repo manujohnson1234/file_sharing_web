@@ -51,7 +51,7 @@ const login = async (req, res)=>{
 
       const token = createSecretToken(user._id);
 
-      res.status(200).json({ message: "User logged in successfully", success: true, token});
+      res.status(200).json({ message: "User logged in successfully", success: true, token,username});
         
     }catch(error){
         console.log(error);

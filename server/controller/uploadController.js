@@ -6,7 +6,7 @@ const showFile = async (req, res)=>{
         const fileObj = await File.find({ username: user.username }).select('_id name');
         console.log(fileObj);
         
-        const baseURL = 'http://localhost:8080/files/';
+        const baseURL = 'http://localhost:8080/preview/';
 
         const files = fileObj.map(file => ({
             name: file.name,

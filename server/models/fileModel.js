@@ -14,6 +14,11 @@ const fileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    // whitewash: [{
+    //     type: String, 
+    //     trim: true, 
+    //     unique: true 
+    // }],
     createdAt: {
         type: Date,
         default: new Date(),

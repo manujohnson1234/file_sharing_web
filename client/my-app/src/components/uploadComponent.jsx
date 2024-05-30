@@ -19,6 +19,10 @@ export  const FileUpload = () => {
     const response = await uploadFile(data);
 
     alert(response.message);
+
+    if (response.success) {
+      window.location.reload();
+    }
   };
 
   return (

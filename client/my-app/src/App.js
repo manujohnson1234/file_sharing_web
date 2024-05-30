@@ -3,6 +3,8 @@ import {Home} from './pages/home';
 import {SignUp} from './pages/signup';
 import { Login } from './pages/login';
 import { Upload } from './pages/upload';
+import { JoinRoom } from './pages/joinRoom'
+
 
 import './App.css';
 
@@ -15,6 +17,7 @@ function App() {
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/upload' element={<Upload/>}/>
+          <Route path='/join-room' element={<JoinRoom/>}/>
         </Routes>
       </BrowserRouter>
     </div>

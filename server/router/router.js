@@ -14,5 +14,7 @@ router.post('/upload',userVerification, showFile);
 
 router.post('/uploadfile',userVerification, upload.single('file'),uploadFile);
 
+router.get('/preview/:fileID/:username',preview);
+
 
 module.exports = router;

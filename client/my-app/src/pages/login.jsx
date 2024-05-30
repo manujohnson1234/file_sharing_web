@@ -34,6 +34,7 @@ export const Login = () => {
 
     if(response && response.status >= 200 && response.status < 300 && response.data.success === true){
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("username", response.data.username);
       navigate('/',{replace: true});
     }else{
       alert(response.data.message);
