@@ -1,13 +1,14 @@
-const File = require("../models/fileModel");
+const File = require('../models/sharedFilesModel');
 
 const showFile = async (req, res)=>{
     const user = req.user;
     try{
-        const fileObj = await File.find({ username: user.username }).select('_id name');
-        const baseURL = 'http://localhost:8080/preview/';
-
+        const fileObj = await File.find({ receiverName: user.username }).select('_id fileName');
+        const baseURL = 'http://localhost:8080/download/';
+        
+        
         const files = fileObj.map(file => ({
-            name: file.name,
+            name: file.fileName,
             link: `${baseURL}${file._id}`
         }));
 

@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
       type: Date,
       default: new Date(),
     },
+    socketId: String
 });
 
 userSchema.pre("save", async function () {

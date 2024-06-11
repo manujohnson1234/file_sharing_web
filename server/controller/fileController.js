@@ -14,7 +14,7 @@ const uploadFile = async (req, res)=>{
     }
     try{
         const file = await File.create(fileObj);
-        console.log(req.file.originalname);
+       
         res.status(200).json({ success: true, message: `${file.name} uploaded`});
     }catch(e){
         console.log(e.message);
